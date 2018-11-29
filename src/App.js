@@ -4,10 +4,12 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store'
 
-import AppNavBar from './components/layout/AppNavBar'
-import Dashboard from './components/layout/Dashboard'
-import AddClient from './components/clients/AddClient'
-import ClientDetails from './components/clients/ClientDetails'
+import AppNavBar from './components/layout/AppNavBar';
+import Dashboard from './components/layout/Dashboard';
+import AddClient from './components/clients/AddClient';
+import EditClient from './components/clients/EditClient';
+import ClientDetails from './components/clients/ClientDetails';
+
 
 class App extends Component {
   render() {
@@ -18,9 +20,10 @@ class App extends Component {
             <AppNavBar />
             <div className='container'>
               <Switch>
-                <Route exact path='/'component={ Dashboard }></Route>
-                <Route exact path='/client/add'component={ AddClient }></Route>
-                <Route exact path='/client/:id'component={ ClientDetails }></Route>
+                <Route exact path='/' component={ Dashboard }></Route>
+                <Route exact path='/client/add' component={ AddClient }></Route>
+                <Route exact path='/client/edit/:id' component={ EditClient }></Route>
+                <Route exact path='/client/:id' component={ ClientDetails }></Route>
               </Switch>
             </div>
           </div>
