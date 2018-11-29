@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import PropTypes from 'prop-types';
-import spinner from '../layout/spinner';
+import Spinner from '../layout/spinner';
 
 class Clients extends Component {
     render() {
@@ -51,7 +51,7 @@ class Clients extends Component {
                 </div>
             )
         } else {
-            return <spinner/>
+            return <Spinner/>
         }
         
     }
