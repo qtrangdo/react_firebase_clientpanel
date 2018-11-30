@@ -39,7 +39,7 @@ const rootReducer = combineReducers({
     firebase: firebaseReducer,
     firestore: firestoreReducer,
     notify: notifyReducer,
-    setting: settingReducer
+    settings: settingReducer
 })
 
 //Create initial state

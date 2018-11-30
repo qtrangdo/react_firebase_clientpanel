@@ -46,7 +46,7 @@ class AppNavBar extends Component {
                 <div className='collapse navbar-collapse' id='navbarMain'>
                     <ul className='navbar-nav mr-auto'>
                         {isAuthenticated ? (
-                            <li className='nav-item'>
+                        <li className='nav-item'>
                             <Link to='/' className='nav-link'>
                                 Dashboard
                             </Link>
@@ -59,6 +59,11 @@ class AppNavBar extends Component {
                                 <a href="#!" className="nav-link">
                                     { auth.email} 
                                 </a>
+                            </li>
+                            <li className='nav-item'>
+                                <Link to='/settings' className='nav-link'>
+                                    Setting
+                                </Link>
                             </li>
                             <li className='nav-item'>
                                 <a href="#!" className="nav-link" onClick={this.onLogoutClick}>
@@ -75,12 +80,14 @@ class AppNavBar extends Component {
 }
 AppNavBar.propTypes = {
     firebase: PropTypes.object.isRequired,
-    auth: PropTypes.object.isRequired
+    auth: PropTypes.object.isRequired,
+    settings: PropTypes.object.isRequired
 }
 
 export default compose(
     firebaseConnect(),
     connect((state, props) => ({
-        auth: state.firebase.auth
+        auth: state.firebase.auth,
+        settings: state.settings
     }))
 )(AppNavBar);
